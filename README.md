@@ -5,9 +5,12 @@ Dayviews-Scraper
 
 A scraper that downloads all the posts from a non-password-protected dayviews (formerly known as bilddagboken) account.
 
-# Dependencies
+## Dependencies
 There's only one major dependency for this script: [PhantomJS][http://phantomjs.org/]. Make sure to install it, otherwise nothing's going to run.
 
-# Usage
+## Usage
 1. You need to specify two url's in the code for now - the entry point (the first image uploaded) as well as the user profile link.
 2. Run "phantomjs scrape.js" from your terminal. Make sure that you're standing in the right folder.
+
+## Known issues
+* The script crashes when a request fails, requiring a restart. This happens every X images. While testing X could be anything from 10 to 200.
