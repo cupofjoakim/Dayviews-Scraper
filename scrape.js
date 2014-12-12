@@ -1,7 +1,8 @@
 var fs = require('fs');
 var page = require('webpage').create();
+var username = "user"
 var entry = "http://dayviews.com/user/27021573/";
-var userProfileUrl = "http://dayviews.com/user/";
+var userProfileUrl = "http://dayviews.com/" + user + "/";
 
 var urlsToCrawl = [entry];
 var imagesArr = [];
