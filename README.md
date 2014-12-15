@@ -8,6 +8,7 @@ There's only one major dependency for this script: [PhantomJS][http://phantomjs.
 
 ## Installation
 Installing the Dayviews-Scraper can be super easy, or super hard - it all depends on your experience with the command line and basic sys-admin work. Here are the steps:
+
 1. Install PhantomJS. On windows, this means that you need to download the latest executable from phantomjs.org and adding it to your path variable. On mac, this is easiest done by simply running the following command from your terminal:
 
     brew update && brew install phantomjs
