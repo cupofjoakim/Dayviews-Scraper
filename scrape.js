@@ -82,6 +82,12 @@ if (args.length === 1) {
 			firstImageId = split[split.length-2];
 		}
 
+		if (args[2]) {
+			var offset = parseInt(args[2]);
+			console.log(typeof offset, offset);
+			pageCount = pageCount + offset;  
+		}
+
 		userProfileUrl = "http://dayviews.com/" + username + "/";
 		createDirIfNonExistent(imageDir);
   	}
@@ -108,6 +114,8 @@ var getPages = function(url){
 	console.log('getting: ' + url);
 	page.open(url, function(status) {
 		if (status == "success"){
+
+			errorCount = 0;
 
 	    	var newImage = page.evaluate(function() {
 	    		$('#fb-root').remove();
@@ -143,13 +151,24 @@ var getPages = function(url){
 
 			downloadImage(newImage.pictureUrl, nextUrl);
 		} else {
+			errorCount++;
 
-			console.log(
-                "Error opening url \"" + page.reason_url
-                + "\": " + page.reason
-            );
+			if(errorCount > 4){
 
-            exitSafely("Closing...");
+				exitSafely("too many errors");
+
+			} else {
+
+				setTimeout(function(){
+					console.log(
+	                	"Error opening url \"" + page.reason_url
+	                	+ "\": " + page.reason
+	            	);
+					console.log("trying again");
+	    			getPages(url);
+				}, 0);
+
+			}
 
 		}
 
@@ -177,7 +196,7 @@ var downloadImage = function(url, nextUrl){
 			fs.write("images/file" + pageCount + ".png",atob(imageBase64),'wb');
 
 
-			var appendStr = imagesArr[pageCount-1].text;
+			var appendStr = imagesArr[pageCount-offset-1].text;
 			fs.write("images/file" + pageCount + ".txt", appendStr,'wb');
 
 			pageCount++;
