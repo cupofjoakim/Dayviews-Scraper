@@ -11,6 +11,7 @@ var entry = "",
 	userProfileUrl = "",
 	shouldGoOn = false,
 	imagesArr = [],
+	offset = 0,
 	pageCount = 1,
 	errorCount = 0,
 	imageDir = '/images';
@@ -83,7 +84,7 @@ if (args.length === 1) {
 		}
 
 		if (args[2]) {
-			var offset = parseInt(args[2]);
+			offset = parseInt(args[2]);
 			console.log(typeof offset, offset);
 			pageCount = pageCount + offset;  
 		}
