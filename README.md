@@ -21,4 +21,5 @@ Installing the Dayviews-Scraper can be super easy, or super hard - it all depend
 
 ## Known issues
 * The script gives a typeerror on some pageloads when evaluating a third party ad script.
-* The script sometimes mistake a facebook (or casumo) js-url for the actual image we want. No worries - the script will try again. 
+* The script sometimes mistake a facebook (or casumo) js-url for the actual image we want. No worries - the script will try again.
+* Special characters (Å, Ä, Ö) is not yet supported. This is prioritized.
