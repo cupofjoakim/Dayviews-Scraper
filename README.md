@@ -17,7 +17,12 @@ Installing the Dayviews-Scraper can be super easy, or super hard - it all depend
 3. Run the script like I tell you below in "Usage".
 
 ## Usage
-1. Run "phantomjs scrape.js http://dayviews.com/username/firstImageId/" from your terminal. Make sure that you're standing in the right folder.
+Run "phantomjs scrape.js http://dayviews.com/username/firstImageId/" from your terminal. Make sure that you're standing in the right folder.
+
+### Arguments
+First argument (required): URL to entrypoint.
+
+Second argument (optional): Offset number
 
 ## Known issues
 * The script gives a typeerror on some pageloads when evaluating a third party ad script.
