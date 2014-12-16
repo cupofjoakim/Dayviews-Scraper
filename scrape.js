@@ -112,7 +112,7 @@ page.onResourceError = function(resourceError) {
 
 
 var getPages = function(url){
-	console.log('getting: ' + url + " " + pageCount);
+	console.log('getting: ' + url + " " + (pageCount-1));
 	page.open(url, function(status) {
 		if (status == "success"){
 
